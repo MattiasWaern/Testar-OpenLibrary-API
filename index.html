@@ -5,20 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Search</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <h1>Book Search</h1>
-    
-    <div class="search-bar">
-      <label for="search-input">Sök bok:</label>
-      <input type="text" id="search-input" placeholder="Skriv titel eller författare">
-      <button id="search-button">Sök</button>
+    <div class="header">
+      <h1>Welcome to BookFinder</h1>
+      <p>Discover your next favorite book. Search by title, author, or genre.</p>
     </div>
-    
+
+    <div class="search-bar">
+      <label for="search-input">📚 Book Search</label>
+      <input type="text" id="search-input" placeholder="Write Book 📚 Or Author">
+      <button id="search-button">Search</button>
+    </div>
+
+<!-- Döp om popular till trending om jag orkar xd -->
+    <div class="popular-books">
+      <h2>Trending Books</h2>
+      <div id="popular-results" class="results"></div>
+    </div>
+
     <div id="results" class="results"></div>
+
+    <div class="footer">
+      <p>© 2023 BookFinder. Made with ❤️ by readers, for readers.</p>
+      <p><a href="#">About Us</a> | <a href="#">Contact</a></p>
+    </div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Include the trendingBooks.js file -->
+  <script src="trendingBooks.js" type="module"></script>
+  <!-- Include the main script.js file -->
+  <script src="script.js" type="module"></script>
 </body>
 </html>

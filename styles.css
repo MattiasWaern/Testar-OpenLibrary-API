@@ -1,109 +1,284 @@
-/* Grundläggande styling */
+/* General Styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .container {
-    width: 80%;
-    max-width: 1000px;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  
+  font-family: 'Merriweather', serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px; /* Wider container for grid layout */
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* ---------------- Search-bar ---------------- */
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.search-bar label {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.search-bar input {
+  padding: 12px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: #007bff;
+}
+
+.search-bar button {
+  padding: 12px 24px;
+  font-size: 16px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #0056b3;
+}
+
+/* ---------------- Search Results Section ---------------- */
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Grid layout */
+  gap: 20px;
+}
+
+.book {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.book img {
+  width: 100%;
+  height: 300px; /* Fixed height for consistency */
+  object-fit: cover; /* Ensures images fill the space without distortion */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.book h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 10px 0;
+  font-family: 'Playfair Display', serif;
+}
+
+.book p {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 5px 0;
+}
+
+.book a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.book a:hover {
+  background-color: #218838;
+}
+
+/* ---------------- Header-like Section----------------  */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* ---------------- Footer-like Section ---------------- */
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  color: #777;
+}
+
+.footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------- Popular Books Section ---------------- */
+.popular-books {
+  margin-top: 40px;
+}
+
+.popular-books h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+  color: #333;
+}
+
+.popular-books .results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.popular-books .book {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.popular-books .book:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.popular-books .book img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.popular-books .book h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 10px 0;
+  font-family: 'Playfair Display', serif;
+}
+
+.popular-books .book p {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 5px 0;
+}
+
+.popular-books .book .stars {
+  color: #ffc107; /* Gold color for stars */
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   h1 {
-    text-align: center;
-    color: #333;
+      font-size: 2rem;
   }
-  
-  .search-bar {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+
+  .header h1 {
+      font-size: 2rem;
   }
-  
+
+  .header p {
+      font-size: 1rem;
+  }
+
   .search-bar input {
-    padding: 10px;
-    font-size: 16px;
-    width: 300px;
-    border: 2px solid #ddd;
-    border-radius: 4px;
+      width: 90%;
   }
-  
+
   .search-bar button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-left: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+      width: 90%;
   }
-  
-  .search-bar button:hover {
-    background-color: #0056b3;
-  }
-  
+
   .results {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
   }
-  
-  .book {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: center;
-    padding: 15px;
-    transition: transform 0.3s ease;
-  }
-  
-  .book:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
+
   .book img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 4px;
+      height: 250px; /* Slightly smaller images for tablets */
   }
-  
-  .book h2 {
-    font-size: 18px;
-    color: #333;
-    margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  h1 {
+      font-size: 1.8rem;
   }
-  
-  .book p {
-    font-size: 14px;
-    color: #777;
-    margin: 5px 0;
+
+  .header h1 {
+      font-size: 1.8rem;
   }
-  
-  .book a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 5px 15px;
-    background-color: #28a745;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
+
+  .header p {
+      font-size: 0.9rem;
   }
-  
-  .book a:hover {
-    background-color: #218838;
+
+  .search-bar input {
+      width: 100%;
   }
-  
+
+  .search-bar button {
+      width: 100%;
+  }
+
+  .results {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjust grid for mobile */
+  }
+
+  .book img {
+      height: 200px; /* Smaller images for mobile */
+  }
+}
