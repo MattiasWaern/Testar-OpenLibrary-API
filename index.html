@@ -9,29 +9,30 @@
 </head>
 <body>
   <div class="container">
-    <div class="header">
+    <header class="header">
       <h1>Welcome to BookFinder</h1>
-      <p>Discover your next favorite book. Search by title, author, or genre.</p>
-    </div>
+      <p>Discover your next favorite book. Search by title or author</p>
+    </header>
 
-    <div class="search-bar">
-      <label for="search-input">📚 Book Search</label>
-      <input type="text" id="search-input" placeholder="Write Book 📚 Or Author">
-      <button id="search-button">Search</button>
-    </div>
+    <main>
+      <section class="search-bar">
+        <label for="search-input">📚 Book Search</label>
+        <input type="text" id="search-input" placeholder="Write Book 📚 Or Author Name">
+        <button id="search-button" aria-label="Search for books">Search</button>
+      </section>
 
-<!-- Döp om popular till trending om jag orkar xd -->
-    <div class="popular-books">
-      <h2>Trending Books</h2>
-      <div id="popular-results" class="results"></div>
-    </div>
+      <div class="popular-books">
+        <h2>Trending Books</h2>
+        <div id="popular-results" class="results"></div>
+      </div>
 
-    <div id="results" class="results"></div>
+      <section id="results" class="results"></section>
+    </main>
 
-    <div class="footer">
+    <footer class="footer">
       <p>© 2023 BookFinder. Made with ❤️ by readers, for readers.</p>
       <p><a href="#">About Us</a> | <a href="#">Contact</a></p>
-    </div>
+    </footer>
   </div>
 
   <!-- Include the trendingBooks.js file -->

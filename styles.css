@@ -1,10 +1,10 @@
 /* General Styling */
 body {
-  font-family: 'Merriweather', serif;
+  font-family: 'Lato', sans-serif; /* Goodreads uses sans-serif fonts */
   margin: 0;
   padding: 0;
-  background-color: #f8f8f8;
-  color: #333;
+  background-color: #f5f5f5; /* Light gray background */
+  color: #333; /* Dark gray text */
   line-height: 1.6;
 }
 
@@ -14,15 +14,16 @@ body {
   margin: 20px auto;
   padding: 20px;
   background-color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+  border-radius: 8px; /* Slightly rounded corners */
 }
 
 h1 {
   text-align: center;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Merriweather', serif; /* Serif font for headings */
   font-size: 2.5rem;
   margin-bottom: 20px;
+  color: #333; /* Dark gray for headings */
 }
 
 /* ---------------- Search-bar ---------------- */
@@ -36,6 +37,7 @@ h1 {
 .search-bar label {
   font-size: 1.1rem;
   margin-bottom: 10px;
+  color: #555; /* Medium gray for labels */
 }
 
 .search-bar input {
@@ -43,30 +45,30 @@ h1 {
   font-size: 16px;
   width: 100%;
   max-width: 400px;
-  border: 2px solid #ddd;
-  border-radius: 6px;
+  border: 1px solid #ddd; /* Lighter border */
+  border-radius: 4px; /* Slightly rounded corners */
   outline: none;
   transition: border-color 0.3s ease;
 }
 
 .search-bar input:focus {
-  border-color: #007bff;
+  border-color: #009688; /* Teal color for focus */
 }
 
 .search-bar button {
   padding: 12px 24px;
   font-size: 16px;
   margin-top: 10px;
-  background-color: #007bff;
+  background-color: #009688; /* Teal color for buttons */
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px; /* Slightly rounded corners */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .search-bar button:hover {
-  background-color: #0056b3;
+  background-color: #00796b; /* Darker teal on hover */
 }
 
 /* ---------------- Search Results Section ---------------- */
@@ -78,8 +80,8 @@ h1 {
 
 .book {
   background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 12px;
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px; /* Slightly rounded corners */
   overflow: hidden;
   text-align: center;
   padding: 15px;
@@ -101,14 +103,14 @@ h1 {
 
 .book h2 {
   font-size: 1.2rem;
-  color: #333;
+  color: #333; /* Dark gray for titles */
   margin: 10px 0;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Merriweather', serif; /* Serif font for book titles */
 }
 
 .book p {
   font-size: 0.9rem;
-  color: #777;
+  color: #777; /* Light gray for descriptions */
   margin: 5px 0;
 }
 
@@ -116,15 +118,15 @@ h1 {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 16px;
-  background-color: #28a745;
+  background-color: #009688; /* Teal color for links */
   color: white;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 4px; /* Slightly rounded corners */
   transition: background-color 0.3s ease;
 }
 
 .book a:hover {
-  background-color: #218838;
+  background-color: #00796b; /* Darker teal on hover */
 }
 
 /* ---------------- Header-like Section----------------  */
@@ -136,11 +138,12 @@ h1 {
 .header h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
+  color: #333; /* Dark gray for headings */
 }
 
 .header p {
   font-size: 1.1rem;
-  color: #555;
+  color: #555; /* Medium gray for subheadings */
 }
 
 /* ---------------- Footer-like Section ---------------- */
@@ -148,12 +151,12 @@ h1 {
   text-align: center;
   margin-top: 40px;
   padding-top: 20px;
-  border-top: 1px solid #ddd;
-  color: #777;
+  border-top: 1px solid #ddd; /* Light border */
+  color: #777; /* Light gray for footer text */
 }
 
 .footer a {
-  color: #007bff;
+  color: #009688; /* Teal color for links */
   text-decoration: none;
 }
 
@@ -170,20 +173,39 @@ h1 {
   font-size: 2rem;
   text-align: center;
   margin-bottom: 20px;
-  font-family: 'Playfair Display', serif;
-  color: #333;
+  font-family: 'Merriweather', serif; /* Serif font for headings */
+  color: #333; /* Dark gray for headings */
 }
 
 .popular-books .results {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
   gap: 20px;
+  padding-bottom: 20px; /* Add some padding to avoid cutting off content */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #009688 #f5f5f5; /* For Firefox */
+}
+
+/* Custom scrollbar for WebKit browsers (Chrome, Safari) */
+.popular-books .results::-webkit-scrollbar {
+  height: 8px;
+}
+
+.popular-books .results::-webkit-scrollbar-thumb {
+  background-color: #009688; /* Teal color for scrollbar */
+  border-radius: 4px;
+}
+
+.popular-books .results::-webkit-scrollbar-track {
+  background-color: #f5f5f5; /* Light gray for scrollbar track */
 }
 
 .popular-books .book {
+  flex: 0 0 auto; /* Prevent flex items from shrinking or growing */
+  width: 200px; /* Fixed width for each book */
   background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 12px;
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px; /* Slightly rounded corners */
   overflow: hidden;
   text-align: center;
   padding: 15px;
@@ -205,14 +227,14 @@ h1 {
 
 .popular-books .book h2 {
   font-size: 1.2rem;
-  color: #333;
+  color: #333; /* Dark gray for titles */
   margin: 10px 0;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Merriweather', serif; /* Serif font for book titles */
 }
 
 .popular-books .book p {
   font-size: 0.9rem;
-  color: #777;
+  color: #777; /* Light gray for descriptions */
   margin: 5px 0;
 }
 
@@ -220,6 +242,46 @@ h1 {
   color: #ffc107; /* Gold color for stars */
   font-size: 1rem;
   margin: 10px 0;
+}
+
+/* Book Details Page */
+.book-cover {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+#book-details {
+  text-align: center;
+}
+
+#book-details h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #333; /* Dark gray for headings */
+}
+
+#book-details p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #555; /* Medium gray for text */
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #009688; /* Teal color for buttons */
+  color: white;
+  text-decoration: none;
+  border-radius: 4px; /* Slightly rounded corners */
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #00796b; /* Darker teal on hover */
 }
 
 /* Responsive Design */
@@ -280,5 +342,17 @@ h1 {
 
   .book img {
       height: 200px; /* Smaller images for mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .popular-books .book {
+    width: 180px; /* Slightly smaller width for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .popular-books .book {
+    width: 150px; /* Smaller width for mobile */
   }
 }
